@@ -26,3 +26,17 @@ Given(/^login e realizado com sucesso$/, () => {
     loginPage.validateLoginSucessfull()
 });
 
+
+When(/^realizo login com "([^"]*)" e "([^"]*)"$/, (name,password) => {
+	loginPage.loginSubmit(name,password)
+});
+
+Then(/^alerta de dados incorretos é exibido$/, () => {
+	loginPage.validateErrorLoginAlert()
+});
+
+Then(/^alerta de "([^"]*)" é exibido com sucesso$/, (test) => {
+	
+    loginPage.validateSpanErrorRequired()
+});
+

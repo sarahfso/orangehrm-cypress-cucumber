@@ -1,0 +1,52 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Seccção colaboradores",
+    "line": 3,
+    "id": "seccção-colaboradores",
+    "tags": [],
+    "uri": "colaboradores.feature",
+    "elements": [
+      {
+        "id": "seccção-colaboradores;validar-listagem-de-colaboradores",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Validar listagem de colaboradores",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "login e realizado com sucesso",
+            "result": {
+              "status": "passed",
+              "duration": 5739000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "acesso o menu de colaboradores",
+            "result": {
+              "status": "passed",
+              "duration": 2145000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "colaboradores são listados com sucesso",
+            "result": {
+              "status": "passed",
+              "duration": 1296000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

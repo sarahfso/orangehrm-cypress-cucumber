@@ -5,15 +5,24 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "npx cypress open",
-    "cy:run": "npx cypress run"
+    "cy:run": "npx cypress run && npm run generate:report",
+    "generate:report": "node cucumber_html_config.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^12.11.0",
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "faker-br": "^0.4.1",
+    "multiple-cucumber-html-reporter": "^3.5.0"
   },
-  "cypress-cucumber-preprocessor" : {
-    "stepDefinitions": "cypress/steps" 
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/steps",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-cucumberJson",
+      "filePrefix": "",
+      "fileSuffix": "-feature"
+    }
   }
 }

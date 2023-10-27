@@ -1,10 +1,26 @@
 import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps';
+import ColaboradoresPage from '../pages/colaboradoresPage';
+const colaboradoresPage = new ColaboradoresPage
 
 
 When(/^acesso o menu de colaboradores$/, () => {
-	cy.get('span').contains('PIM').click()
+	colaboradoresPage.intercepGetList()
+	colaboradoresPage.clickMenuColaboradores()
+	// colaboradoresPage.mockGetList()
+
 });
 
 Then(/^colaboradores são listados com sucesso$/, () => {
-	cy.get('h5').contains('Employee Information').should('be.visible')
+	colaboradoresPage.waitGetList()
+	colaboradoresPage.validateLIstColaboradores()
+});
+
+When(/^acesso o menu de colaboradores com erro sistêmico genérico$/, () => {
+	colaboradoresPage.mockErrorList()
+	colaboradoresPage.clickMenuColaboradores()
+
+});
+
+Then(/^mensagem de erro é exibida com sucesso$/, () => {
+	colaboradoresPage.validateTableBodyNotExist()
 });
