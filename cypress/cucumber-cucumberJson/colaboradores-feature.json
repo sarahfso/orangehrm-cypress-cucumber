@@ -22,7 +22,7 @@
             "name": "login e realizado com sucesso",
             "result": {
               "status": "passed",
-              "duration": 5739000000
+              "duration": 16309000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "acesso o menu de colaboradores",
             "result": {
               "status": "passed",
-              "duration": 2145000000
+              "duration": 1576000000
             }
           },
           {
@@ -42,7 +42,125 @@
             "name": "colaboradores são listados com sucesso",
             "result": {
               "status": "passed",
-              "duration": 1296000000
+              "duration": 3353000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "seccção-colaboradores;validar-cadastro-de-colaborador",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Validar cadastro de colaborador",
+        "tags": [
+          {
+            "name": "@Positivo",
+            "line": 19
+          },
+          {
+            "name": "@smokeTest",
+            "line": 19
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "login e realizado com sucesso",
+            "result": {
+              "status": "passed",
+              "duration": 4646000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "acesso a pagina de adicionar colaborador",
+            "result": {
+              "status": "passed",
+              "duration": 3760000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "cadastro novo colaborador",
+            "result": {
+              "status": "passed",
+              "duration": 3469000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "cadastro é realizado com sucesso",
+            "result": {
+              "status": "passed",
+              "duration": 6096000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "seccção-colaboradores;validar-busca-de-colaborador",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "Validar busca de colaborador",
+        "tags": [
+          {
+            "name": "@Positivo",
+            "line": 25
+          },
+          {
+            "name": "@smokeTest",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "login e realizado com sucesso",
+            "result": {
+              "status": "passed",
+              "duration": 5346000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "acesso o menu de colaboradores",
+            "result": {
+              "status": "passed",
+              "duration": 1453000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "pesquiso colaborador",
+            "result": {
+              "status": "passed",
+              "duration": 2089000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "os resultados da busca sao exibidos com sucesso",
+            "result": {
+              "status": "passed",
+              "duration": 2678000000
             }
           }
         ]
