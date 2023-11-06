@@ -15,9 +15,9 @@ Feature: Seccção colaboradores
     Scenario: Validar listagem de colaboradores
         When acesso o menu de colaboradores
         Then colaboradores são listados com sucesso
-
+        
     @Positivo @smokeTest
-    Scenario: Cadastro de colaborador com sucesso
+    Scenario: Validar cadastro de colaborador
         When acesso a pagina de adicionar colaborador
         And cadastro novo colaborador
         Then cadastro é realizado com sucesso

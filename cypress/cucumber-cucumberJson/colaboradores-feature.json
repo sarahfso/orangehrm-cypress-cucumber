@@ -22,7 +22,7 @@
             "name": "login e realizado com sucesso",
             "result": {
               "status": "passed",
-              "duration": 16309000000
+              "duration": 40569000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "acesso o menu de colaboradores",
             "result": {
               "status": "passed",
-              "duration": 1576000000
+              "duration": 10493000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "colaboradores são listados com sucesso",
             "result": {
               "status": "passed",
-              "duration": 3353000000
+              "duration": 15263000000
             }
           }
         ]
@@ -71,7 +71,7 @@
             "name": "login e realizado com sucesso",
             "result": {
               "status": "passed",
-              "duration": 4646000000
+              "duration": 5906000000
             }
           },
           {
@@ -81,7 +81,7 @@
             "name": "acesso a pagina de adicionar colaborador",
             "result": {
               "status": "passed",
-              "duration": 3760000000
+              "duration": 5215000000
             }
           },
           {
@@ -91,7 +91,7 @@
             "name": "cadastro novo colaborador",
             "result": {
               "status": "passed",
-              "duration": 3469000000
+              "duration": 4234000000
             }
           },
           {
@@ -101,7 +101,7 @@
             "name": "cadastro é realizado com sucesso",
             "result": {
               "status": "passed",
-              "duration": 6096000000
+              "duration": 8176000000
             }
           }
         ]
@@ -130,7 +130,7 @@
             "name": "login e realizado com sucesso",
             "result": {
               "status": "passed",
-              "duration": 5346000000
+              "duration": 4924000000
             }
           },
           {
@@ -140,7 +140,7 @@
             "name": "acesso o menu de colaboradores",
             "result": {
               "status": "passed",
-              "duration": 1453000000
+              "duration": 3006000000
             }
           },
           {
@@ -150,7 +150,7 @@
             "name": "pesquiso colaborador",
             "result": {
               "status": "passed",
-              "duration": 2089000000
+              "duration": 4845000000
             }
           },
           {
@@ -160,7 +160,7 @@
             "name": "os resultados da busca sao exibidos com sucesso",
             "result": {
               "status": "passed",
-              "duration": 2678000000
+              "duration": 3767000000
             }
           }
         ]
