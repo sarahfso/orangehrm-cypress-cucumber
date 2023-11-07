@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run && npm run generate:report",
-    "generate:report": "node ./cucumber_html_config.js"
+    "generate:report": "node cucumber_html_config.js"
   },
   "author": "",
   "license": "ISC",
