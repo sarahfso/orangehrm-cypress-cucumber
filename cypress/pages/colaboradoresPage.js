@@ -34,8 +34,8 @@ class ColaboradoresPage {
         .should('be.visible').type(newColaborador.lastName);
 
         // Verifica se o Employee Id já existe
-        cy.get(colaboradoresElements.errorIdDuplicate())
-        .if('contain', colaboradoresElements.errorIdDuplicateContent())
+        cy.get(colaboradoresElements.errorIdDuplicateField())
+        .if('contain', colaboradoresElements.errorIdDuplicateMessage())
         .selectInputByLabel('Employee Id')
         .clear()
         .type(Math.floor(Math.random() * 10000));

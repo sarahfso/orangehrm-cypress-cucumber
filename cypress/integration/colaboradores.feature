@@ -1,6 +1,6 @@
 # language: en
 
-Feature: Seccção colaboradores
+Feature: Seção colaboradores
     Background: realizar login
         Given login e realizado com sucesso
 

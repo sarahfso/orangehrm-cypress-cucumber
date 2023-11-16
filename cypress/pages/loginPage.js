@@ -1,4 +1,4 @@
-import LoginElements from "../elements/loginElements";
+import LoginElements from "../elements/login.Elements";
 const loginElements = new LoginElements
 
 class LoginPage {

@@ -1,7 +1,7 @@
 const report = require('multiple-cucumber-html-reporter');
 
 report.generate({
-	jsonDir: 'cypress/cucumber-cucumberJson/',
+	jsonDir: 'cypress/cucumber-json/',
 	reportPath: 'cypress/reports/',
 	metadata:{
         browser: {
@@ -10,18 +10,18 @@ report.generate({
         },
         device: 'Local test machine',
         platform: {
-            name: 'ubuntu',
-            version: '16.04'
+            name: 'windows',
+            version: '11'
         }
     },
     customData: {
         title: 'Run info',
         data: [
-            {label: 'Project', value: 'Custom project'},
-            {label: 'Release', value: '1.2.3'},
-            {label: 'Cycle', value: 'B11221.34321'},
-            {label: 'Execution Start Time', value: 'Nov 19th 2017, 02:31 PM EST'},
-            {label: 'Execution End Time', value: 'Nov 19th 2017, 02:56 PM EST'}
+            {label: 'Project', value: 'OrangeHRM E2E Cucumber/Cypress'},
+            {label: 'Release', value: '1'},
+            {label: 'Cycle', value: '-'},
+            {label: 'Execution Start Time', value: '-'},
+            {label: 'Execution End Time', value: '-'}
         ]
     }
 });

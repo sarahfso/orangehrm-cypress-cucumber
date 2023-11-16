@@ -2,7 +2,6 @@ import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps';
 import ColaboradoresPage from '../pages/colaboradoresPage';
 const colaboradoresPage = new ColaboradoresPage
 
-
 When(/^acesso o menu de colaboradores$/, () => {
 	colaboradoresPage.intercepGetList()
 	colaboradoresPage.clickMenuColaboradores()
@@ -24,7 +23,6 @@ When(/^acesso o menu de colaboradores com erro sistêmico genérico$/, () => {
 Then(/^mensagem de erro é exibida com sucesso$/, () => {
 	colaboradoresPage.validateTableBodyNotExist()
 });
-
 
 When(/^acesso a pagina de adicionar colaborador$/, () => {
 	colaboradoresPage.clickAddColaborador()

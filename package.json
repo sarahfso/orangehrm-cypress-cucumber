@@ -1,14 +1,14 @@
 {
-  "name": "cypress_cucumber_page_solutis",
+  "name": "orangehrm-cypress-cucumber",
   "version": "1.0.0",
-  "description": "",
+  "description": "example automation orangehrm",
   "main": "index.js",
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run && npm run generate:report",
     "generate:report": "node cucumber_html_config.js"
   },
-  "author": "",
+  "author": "github.com/sarahfso",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^12.11.0",
@@ -21,7 +21,7 @@
     "stepDefinitions": "cypress/steps",
     "cucumberJson": {
       "generate": true,
-      "outputFolder": "cypress/cucumber-cucumberJson",
+      "outputFolder": "cypress/cucumber-json",
       "filePrefix": "",
       "fileSuffix": "-feature"
     }

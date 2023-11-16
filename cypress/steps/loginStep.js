@@ -18,14 +18,12 @@ Then(/^login é realizado com sucesso$/, () => {
 	loginPage.validateLoginSucessfull()
 });
 
-
 Given(/^login e realizado com sucesso$/, () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     loginPage.verificaImageLogin()
     loginPage.loginSubmit(name,password)
     loginPage.validateLoginSucessfull()
 });
-
 
 When(/^realizo login com "([^"]*)" e "([^"]*)"$/, (name,password) => {
 	loginPage.loginSubmit(name,password)
@@ -39,4 +37,3 @@ Then(/^alerta de "([^"]*)" é exibido com sucesso$/, (test) => {
 	
     loginPage.validateSpanErrorRequired()
 });
-

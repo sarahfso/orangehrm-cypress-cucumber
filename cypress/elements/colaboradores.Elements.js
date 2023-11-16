@@ -1,13 +1,12 @@
 class ColaboradoresElements {
-
     menuColaboradoresLink = () => {return 'span'}
     titleColaboradores = () => {return 'h5'}
     noRecords = () => {return '.orangehrm-horizontal-padding > span'}
     inputFirstName = () => {return 'input[placeholder="First Name"]'}
     inputMiddleName = () => {return 'input[placeholder="Middle Name"]'}
     inputLastName = () => {return 'input[placeholder="Last Name"]'}
-    errorIdDuplicate = () => {return '.oxd-input-field-error-message'}
-    errorIdDuplicateContent = () => {return 'Employee Id already exists'}
+    errorIdDuplicateField = () => {return '.oxd-input-field-error-message'}
+    errorIdDuplicateMessage = () => {return 'Employee Id already exists'}
     inputProfileImage = () => {return '.orangehrm-employee-image input'}
     pathToImage = () => {return 'cypress/fixtures/image.png'}
     buttonSubmit = () => {return 'button[type="submit"]'}
