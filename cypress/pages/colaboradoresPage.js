@@ -21,7 +21,6 @@ class ColaboradoresPage {
     }
 
     clickAddColaborador() {
-        this.clickMenuColaboradores()
         cy.contains('button', 'Add').should('be.visible').click()
     }
 
@@ -69,13 +68,8 @@ class ColaboradoresPage {
         .should('be.visible').click({force:true});
     }
 
-    validateCadastroSucessfullMessage() {
-        cy.get(colaboradoresElements.addSucessAlert()).as('addSucessAlert')
-        .should('exist')
-    }
-
-    validateCadastroSucessfullRedirect() {
-        cy.shouldRedirect('/pim/viewPersonalDetails')
+    validateSucessAlert() {
+        cy.get(colaboradoresElements.sucessAlert()).should('exist')
     }
 
     validateCadastroData() {
@@ -90,16 +84,30 @@ class ColaboradoresPage {
         cy.shouldRedirect('/pim/addEmployee');
     }
 
-    validateSearchResults() {
+    validateRedirectToColaboradorPage() {
+        cy.shouldRedirect('/pim/viewPersonalDetails');
+    }
+
+    validateOneSearchResult() {
         // Valida se há apenas 1 resultado
         cy.get(colaboradoresElements.searchResultsTable()).as('searchResults')
         .children().should('have.length', 1);
+    }
 
-        // Clica em editar
-        cy.get('@searchResults').find('button').last().click();
+    validateNoRecordsFoundAlert() {
+        cy.get(colaboradoresElements.noRecordsFoundAlert()).should('exist')
+    }
 
-        // Valida se foi redirecionado
-        cy.shouldRedirect('/pim/viewPersonalDetails');
+    clickEditOnColaboradorCard() {
+        cy.get('@searchResults').find('button').last().click()
+    }
+
+    clickDeleteOnColaboradorCard() {
+        cy.get('@searchResults').find('button').first().click()
+    }
+
+    clickConfirmDeleteButton() {
+        cy.get(colaboradoresElements.confirmDeleteButton()).click()
     }
 
     validateLIstColaboradores() {
@@ -109,6 +117,7 @@ class ColaboradoresPage {
     mockErrorList() {
         cy.intercept('GET', '**/v2/pim/employees?**', { forceNetworkError: true }).as('errorLIstPim')
     }
+
     validateTableBodyNotExist() {
         cy.get(colaboradoresElements.noRecords())
             .should('be.visible')

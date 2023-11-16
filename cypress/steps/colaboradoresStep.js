@@ -24,7 +24,12 @@ Then(/^mensagem de erro é exibida com sucesso$/, () => {
 	colaboradoresPage.validateTableBodyNotExist()
 });
 
-When(/^acesso a pagina de adicionar colaborador$/, () => {
+// CADASTRO
+When(/^acesso o menu de colaboradores$/, () => {
+	colaboradoresPage.clickMenuColaboradores()
+});
+
+When(/^clico em adicionar colaborador$/, () => {
 	colaboradoresPage.clickAddColaborador()
 	colaboradoresPage.validateRedirectToAddColaboradorPage()
 });
@@ -34,20 +39,48 @@ When(/^cadastro novo colaborador$/, () => {
 });
 
 Then(/^cadastro é realizado com sucesso$/, () => {
-	colaboradoresPage.validateCadastroSucessfullMessage()
-	colaboradoresPage.validateCadastroSucessfullRedirect()
+	colaboradoresPage.validateSucessAlert()
+	colaboradoresPage.validateRedirectToColaboradorPage()
 	colaboradoresPage.validateCadastroData()
 });
 
+// BUSCA
 When(/^acesso o menu de colaboradores$/, () => {
 	colaboradoresPage.clickMenuColaboradores()
 });
 
 When(/^pesquiso colaborador$/, () => {
-	colaboradoresPage.colaboradorSearchSubmit();
+	colaboradoresPage.colaboradorSearchSubmit()
 });
 
 Then(/^os resultados da busca sao exibidos com sucesso$/, () => {
-	colaboradoresPage.validateSearchResults()
+	colaboradoresPage.validateOneSearchResult()
+	colaboradoresPage.clickEditOnColaboradorCard()
+	colaboradoresPage.validateRedirectToColaboradorPage()
 	colaboradoresPage.validateCadastroData()
 });
+
+//EXCLUSAO
+When(/^acesso o menu de colaboradores$/, () => {
+	colaboradoresPage.clickMenuColaboradores()
+});
+
+When(/^pesquiso colaborador$/, () => {
+	colaboradoresPage.colaboradorSearchSubmit()
+});
+
+When(/^clico no botao de excluir$/, () => {
+	colaboradoresPage.validateOneSearchResult()
+	colaboradoresPage.clickDeleteOnColaboradorCard()
+});
+
+When(/^confirmo que desejo excluir$/, () => {
+	colaboradoresPage.clickConfirmDeleteButton()
+});
+
+Then(/^o colaborador é excluido com sucesso$/, () => {
+	colaboradoresPage.validateSucessAlert()
+	colaboradoresPage.colaboradorSearchSubmit()
+	colaboradoresPage.validateTableBodyNotExist()
+});
+

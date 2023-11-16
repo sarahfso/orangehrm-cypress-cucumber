@@ -12,7 +12,9 @@ class ColaboradoresElements {
     buttonSubmit = () => {return 'button[type="submit"]'}
     profileImage = () => {return 'img.employee-image'}
     defaultProfileImg = () => {return '/web/images/default-photo.png'}
-    addSucessAlert = () => {return 'div.oxd-toast-content--success'}
+    sucessAlert = () => {return 'div.oxd-toast-content--success'}
     searchResultsTable = () => {return 'div.oxd-table-body'}
+    confirmDeleteButton = () => {return '.oxd-button--label-danger'}
+    noRecordsFoundAlert = () => {return '.oxd-toast--info'}
 }
 export default ColaboradoresElements
