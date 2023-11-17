@@ -15,7 +15,7 @@ Feature: Secção colaboradores
     Scenario: Validar listagem de colaboradores
         When acesso o menu de colaboradores
         Then colaboradores são listados com sucesso
-        
+
     @Positivo @smokeTest
     Scenario: Validar cadastro de colaborador
         When acesso o menu de colaboradores
@@ -44,7 +44,7 @@ Feature: Secção colaboradores
         And tento cadastrar novo colaborador com "<firstname>", "<middlename>" e "<lastname>"
         Then alerta de "<testDescription>" é exibido com sucesso
         Examples:
-            | testDescription                           | firstname | middlename | lastname |
-            | Não preenchimento de campos obrigatórios  |           |            |          |
-            | Não preenchimento do campo "First Name"   |           |            | Sainz    |
-            | Não preenchimento do campo "Last Name"    | Carlos    |            |          |
+            | testDescription                          | firstname | middlename | lastname |
+            | Não preenchimento de campos obrigatórios |           |            |          |
+            | Não preenchimento do campo "First Name"  |           |            | Sainz    |
+            | Não preenchimento do campo "Last Name"   | Carlos    |            |          |
