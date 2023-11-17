@@ -38,13 +38,13 @@ Feature: Secção colaboradores
         Then o colaborador é excluído com sucesso
 
     @Negativo
-    Scenario Outline: Cadastro sem sucesso: <testDecription>
+    Scenario Outline: Cadastro sem sucesso: <testDescription>
         When acesso o menu de colaboradores
         And clico em adicionar colaborador
         And tento cadastrar novo colaborador com "<firstname>", "<middlename>" e "<lastname>"
         Then alerta de "<testDescription>" é exibido com sucesso
         Examples:
-            | testDecription                           | firstname | middlename | lastname |
+            | testDescription                           | firstname | middlename | lastname |
             | Não preenchimento de campos obrigatórios |           |            |          |
             | Não preenchimento do campo "First Name"  |           |            | Sainz    |
             | Não preenchimento do campo "Last Name"   | Carlos    |            |          |
