@@ -1,6 +1,6 @@
 # Cypress + Cucumber
  
-Projeto de exemplo para realização de testes e2e utilizando o Cypress + Cucumber.
+Projeto de exemplo para realização de testes e2e utilizando o Cypress + Cucumber. Você pode visualizar os reports gerados em integração contínua [aqui](https://sarahfso.github.io/orangehrm-cypress-cucumber).
  
 ## Ferramentas utilizadas:
 - [VSCode](https://code.visualstudio.com/ "VSCode")
@@ -45,5 +45,5 @@ cypress open
 npx cypress open
 ```
  
-### Reports desse projeto em integração contínua
+### Reports
 Você pode visualizar os reports gerados [aqui](https://sarahfso.github.io/orangehrm-cypress-cucumber).
