@@ -45,6 +45,6 @@ Feature: Secção colaboradores
         Then alerta de "<testDescription>" é exibido com sucesso
         Examples:
             | testDescription                           | firstname | middlename | lastname |
-            | Não preenchimento de campos obrigatórios |           |            |          |
-            | Não preenchimento do campo "First Name"  |           |            | Sainz    |
-            | Não preenchimento do campo "Last Name"   | Carlos    |            |          |
+            | Não preenchimento de campos obrigatórios  |           |            |          |
+            | Não preenchimento do campo "First Name"   |           |            | Sainz    |
+            | Não preenchimento do campo "Last Name"    | Carlos    |            |          |
