@@ -24,7 +24,6 @@ npm i
 ```
 npm init -y
 ```
- 
 * Instalar a última versão do cypress e cypress-cucumber-preprocessor:
 ```
 npm i cypress -D
@@ -33,8 +32,7 @@ npm i cypress-cucumber-preprocessor -D
 * Somente para o report:  
 ```
 npm i multiple-cucumber-html-reporter -D
-```
- 
+``` 
 * Em um terminal execute o comando abaixo para abrir o cypress:
 ```
 cypress open 
