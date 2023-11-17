@@ -2,7 +2,7 @@
 
 Feature: Seção colaboradores
     Background: realizar login
-        Given login e realizado com sucesso
+        Given login é realizado com sucesso
 
     # Scenario: Validar listagem de colaboradores
     #     When acesso o menu de colaboradores
@@ -27,12 +27,24 @@ Feature: Seção colaboradores
     Scenario: Validar busca de colaborador
         When acesso o menu de colaboradores
         And pesquiso colaborador
-        Then os resultados da busca sao exibidos com sucesso
+        Then os resultados da busca são exibidos com sucesso
 
     @Positivo @smokeTest
-    Scenario: Validar exclusao de colaborador
+    Scenario: Validar exclusão de colaborador
         When acesso o menu de colaboradores
         And pesquiso colaborador
-        And clico no botao de excluir
+        And clico no botão de excluir
         And confirmo que desejo excluir
-        Then o colaborador é excluido com sucesso
+        Then o colaborador é excluído com sucesso
+
+    @Negativo
+    Scenario Outline: Cadastro sem sucesso: <testDecription>
+        When acesso o menu de colaboradores
+        And clico em adicionar colaborador
+        And tento cadastrar novo colaborador com "<firstname>", "<middlename>" e "<lastname>"
+        Then alerta de "<testDescription>" é exibido com sucesso
+        Examples:
+            | testDecription                           | firstname | middlename | lastname |
+            | Não preenchimento de campos obrigatórios |           |            |          |
+            | Não preenchimento do campo "First Name"  |           |            | Sainz    |
+            | Não preenchimento do campo "Last Name"   | Carlos    |            |          |

@@ -5,7 +5,7 @@ class ColaboradoresElements {
     inputFirstName = () => {return 'input[placeholder="First Name"]'}
     inputMiddleName = () => {return 'input[placeholder="Middle Name"]'}
     inputLastName = () => {return 'input[placeholder="Last Name"]'}
-    errorIdDuplicateField = () => {return '.oxd-input-field-error-message'}
+    errorAlert = () => {return '.oxd-input-field-error-message'}
     errorIdDuplicateMessage = () => {return 'Employee Id already exists'}
     inputProfileImage = () => {return '.orangehrm-employee-image input'}
     pathToImage = () => {return 'cypress/fixtures/image.png'}

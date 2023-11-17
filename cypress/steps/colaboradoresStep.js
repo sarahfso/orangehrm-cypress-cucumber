@@ -53,7 +53,7 @@ When(/^pesquiso colaborador$/, () => {
 	colaboradoresPage.colaboradorSearchSubmit()
 });
 
-Then(/^os resultados da busca sao exibidos com sucesso$/, () => {
+Then(/^os resultados da busca são exibidos com sucesso$/, () => {
 	colaboradoresPage.validateOneSearchResult()
 	colaboradoresPage.clickEditOnColaboradorCard()
 	colaboradoresPage.validateRedirectToColaboradorPage()
@@ -69,7 +69,7 @@ When(/^pesquiso colaborador$/, () => {
 	colaboradoresPage.colaboradorSearchSubmit()
 });
 
-When(/^clico no botao de excluir$/, () => {
+When(/^clico no botão de excluir$/, () => {
 	colaboradoresPage.validateOneSearchResult()
 	colaboradoresPage.clickDeleteOnColaboradorCard()
 });
@@ -78,9 +78,27 @@ When(/^confirmo que desejo excluir$/, () => {
 	colaboradoresPage.clickConfirmDeleteButton()
 });
 
-Then(/^o colaborador é excluido com sucesso$/, () => {
+Then(/^o colaborador é excluído com sucesso$/, () => {
 	colaboradoresPage.validateSucessAlert()
 	colaboradoresPage.colaboradorSearchSubmit()
 	colaboradoresPage.validateTableBodyNotExist()
 });
+
+// Cadastro sem sucesso
+When(/^acesso o menu de colaboradores$/, () => {
+	colaboradoresPage.clickMenuColaboradores()
+});
+
+When(/^clico em adicionar colaborador$/, () => {
+	colaboradoresPage.clickAddColaborador()
+});
+
+When(/^tento cadastrar novo colaborador com "([^"]*)", "([^"]*)" e "([^"]*)"$/, (firstname,middlename,lastname) => {
+	colaboradoresPage.novoColaboradorSubmit(firstname,middlename,lastname)
+});
+
+Then(/^alerta de "([^"]*)" é exibido com sucesso$/, (test) => {
+	colaboradoresPage.validateSpanErrorRequired()
+});
+
 

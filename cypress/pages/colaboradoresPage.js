@@ -33,7 +33,56 @@ class ColaboradoresPage {
         .should('be.visible').type(newColaborador.lastName);
 
         // Verifica se o Employee Id já existe
-        cy.get(colaboradoresElements.errorIdDuplicateField())
+        cy.get(colaboradoresElements.errorAlert())
+        .if('contain', colaboradoresElements.errorIdDuplicateMessage())
+        .selectInputByLabel('Employee Id')
+        .clear()
+        .type(Math.floor(Math.random() * 10000));
+
+        // Guarda o valor de Employee Id
+        cy.selectInputByLabel('Employee Id').invoke('val').then((value) => {
+            colaboradorId = value;
+        });
+
+        // Upload da imagem do perfil
+        cy.get(colaboradoresElements.inputProfileImage())
+        .selectFile(colaboradoresElements.pathToImage(), {force: true})
+
+        // Valida upload
+        cy.get(colaboradoresElements.profileImage())
+        .should('not.contain', colaboradoresElements.defaultProfileImg())
+
+        // Submete
+        cy.get(colaboradoresElements.buttonSubmit())
+        .should('be.visible').click()
+
+    }
+
+    novoColaboradorSubmit(firstname,middlename,lastname) {
+        if (firstname === "") {
+            cy.get(colaboradoresElements.inputFirstName()).clear();
+        } else {
+            cy.get(colaboradoresElements.inputFirstName())
+            .should('be.visible').type(firstname);
+        }
+
+        if (middlename === "") {
+            cy.get(colaboradoresElements.inputMiddleName()).clear();
+        } else {
+            cy.get(colaboradoresElements.inputMiddleName())
+            .should('be.visible').type(middlename);
+        }
+
+        if (middlename === "") {
+            cy.get(colaboradoresElements.inputLastName()).clear();
+        } else {
+            cy.get(colaboradoresElements.inputLastName())
+            .should('be.visible').type(lastname);
+        }
+        
+
+        // Verifica se o Employee Id já existe
+        cy.get(colaboradoresElements.errorAlert())
         .if('contain', colaboradoresElements.errorIdDuplicateMessage())
         .selectInputByLabel('Employee Id')
         .clear()
@@ -96,6 +145,10 @@ class ColaboradoresPage {
 
     validateNoRecordsFoundAlert() {
         cy.get(colaboradoresElements.noRecordsFoundAlert()).should('exist')
+    }
+
+    validateSpanErrorRequired() {
+        cy.get(colaboradoresElements.errorAlert()).contains('Required')
     }
 
     clickEditOnColaboradorCard() {

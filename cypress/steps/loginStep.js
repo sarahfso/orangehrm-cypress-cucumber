@@ -5,7 +5,7 @@ const loginPage = new LoginPage
 let name = 'Admin'
 let password = 'admin123'
 
-Given(/^acesso a pagina de login$/, () => {
+Given(/^acesso a página de login$/, () => {
 	cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     loginPage.verificaImageLogin()
 });
@@ -18,7 +18,7 @@ Then(/^login é realizado com sucesso$/, () => {
 	loginPage.validateLoginSucessfull()
 });
 
-Given(/^login e realizado com sucesso$/, () => {
+Given(/^login é realizado com sucesso$/, () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     loginPage.verificaImageLogin()
     loginPage.loginSubmit(name,password)
