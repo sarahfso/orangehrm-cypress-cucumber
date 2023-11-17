@@ -1,5 +1,5 @@
 node_modules/
-reports/
-videos/
-cucumber-json/
+cypress/videos/
+cypress/cucumber-json/
 public/
+cypress/screenshots/

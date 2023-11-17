@@ -6,7 +6,6 @@ When(/^acesso o menu de colaboradores$/, () => {
 	colaboradoresPage.intercepGetList()
 	colaboradoresPage.clickMenuColaboradores()
 	// colaboradoresPage.mockGetList()
-
 });
 
 Then(/^colaboradores são listados com sucesso$/, () => {
@@ -84,7 +83,7 @@ Then(/^o colaborador é excluído com sucesso$/, () => {
 	colaboradoresPage.validateTableBodyNotExist()
 });
 
-// Cadastro sem sucesso
+// CADASTRO SEM SUCESSO
 When(/^acesso o menu de colaboradores$/, () => {
 	colaboradoresPage.clickMenuColaboradores()
 });
@@ -100,5 +99,6 @@ When(/^tento cadastrar novo colaborador com "([^"]*)", "([^"]*)" e "([^"]*)"$/, 
 Then(/^alerta de "([^"]*)" é exibido com sucesso$/, (test) => {
 	colaboradoresPage.validateSpanErrorRequired()
 });
+
 
 

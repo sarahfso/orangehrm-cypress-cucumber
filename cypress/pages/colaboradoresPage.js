@@ -33,17 +33,10 @@ class ColaboradoresPage {
         cy.get(colaboradoresElements.inputLastName())
         .should('be.visible').type(newColaborador.lastName);
 
-        // Verifica se o Employee Id já existe
-        cy.get(colaboradoresElements.errorAlert())
-        .if('contain', colaboradoresElements.errorIdDuplicateMessage())
-        .selectInputByLabel('Employee Id')
-        .clear()
-        .type(Math.floor(Math.random() * 10000));
-
         // Guarda o valor de Employee ID
         cy.selectInputByLabel('Employee Id').invoke('val').then((value) => {
             colaboradorId = value;
-        });
+        })
 
         // Upload da imagem do perfil
         cy.get(colaboradoresElements.inputProfileImage())
@@ -57,6 +50,18 @@ class ColaboradoresPage {
         cy.get(colaboradoresElements.buttonSubmit())
         .should('be.visible').click()
 
+        // Caso o Employee ID já existe
+        cy.get(colaboradoresElements.errorAlert())
+        .if('contain', colaboradoresElements.errorIdDuplicateMessage())
+        .selectInputByLabel('Employee Id')
+        .clear()
+        .type(Math.floor(Math.random() * 10000))
+        .then(() => {
+            cy.selectInputByLabel('Employee Id').invoke('val').then((value) => {
+                colaboradorId = value
+            })
+            cy.get(colaboradoresElements.buttonSubmit()).click()
+        })
     }
 
     novoColaboradorParamsSubmit(firstname,middlename,lastname) {
@@ -82,18 +87,6 @@ class ColaboradoresPage {
             .should('be.visible').type(lastname);
         }
 
-        // Verifica se o Employee Id já existe
-        cy.get(colaboradoresElements.errorAlert())
-        .if('contain', colaboradoresElements.errorIdDuplicateMessage())
-        .selectInputByLabel('Employee Id')
-        .clear()
-        .type(Math.floor(Math.random() * 10000));
-
-        // Guarda o valor de Employee Id
-        cy.selectInputByLabel('Employee Id').invoke('val').then((value) => {
-            colaboradorId = value;
-        });
-
         // Upload da imagem do perfil
         cy.get(colaboradoresElements.inputProfileImage())
         .selectFile(colaboradoresElements.pathToImage(), {force: true})
@@ -105,7 +98,6 @@ class ColaboradoresPage {
         // Submete
         cy.get(colaboradoresElements.buttonSubmit())
         .should('be.visible').click()
-
     }
 
     colaboradorSearchSubmit() {
