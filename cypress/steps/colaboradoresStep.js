@@ -94,7 +94,7 @@ When(/^clico em adicionar colaborador$/, () => {
 });
 
 When(/^tento cadastrar novo colaborador com "([^"]*)", "([^"]*)" e "([^"]*)"$/, (firstname,middlename,lastname) => {
-	colaboradoresPage.novoColaboradorSubmit(firstname,middlename,lastname)
+	colaboradoresPage.novoColaboradorParamsSubmit(firstname,middlename,lastname)
 });
 
 Then(/^alerta de "([^"]*)" é exibido com sucesso$/, (test) => {

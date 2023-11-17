@@ -25,6 +25,7 @@ class ColaboradoresPage {
     }
 
     novoColaboradorSubmit() {
+        // Preenche dados
         cy.get(colaboradoresElements.inputFirstName())
         .should('be.visible').type(newColaborador.firstName);
         cy.get(colaboradoresElements.inputMiddleName())
@@ -39,7 +40,7 @@ class ColaboradoresPage {
         .clear()
         .type(Math.floor(Math.random() * 10000));
 
-        // Guarda o valor de Employee Id
+        // Guarda o valor de Employee ID
         cy.selectInputByLabel('Employee Id').invoke('val').then((value) => {
             colaboradorId = value;
         });
@@ -58,7 +59,8 @@ class ColaboradoresPage {
 
     }
 
-    novoColaboradorSubmit(firstname,middlename,lastname) {
+    novoColaboradorParamsSubmit(firstname,middlename,lastname) {
+        
         if (firstname === "") {
             cy.get(colaboradoresElements.inputFirstName()).clear();
         } else {
@@ -79,7 +81,6 @@ class ColaboradoresPage {
             cy.get(colaboradoresElements.inputLastName())
             .should('be.visible').type(lastname);
         }
-        
 
         // Verifica se o Employee Id já existe
         cy.get(colaboradoresElements.errorAlert())

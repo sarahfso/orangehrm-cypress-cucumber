@@ -14,7 +14,7 @@ When(/^realizo o login com dados válidos$/, () => {
     loginPage.loginSubmit(name,password)
 });
 
-Then(/^login é realizado com sucesso$/, () => {
+Then(/^o login é realizado com sucesso$/, () => {
 	loginPage.validateLoginSucessfull()
 });
 

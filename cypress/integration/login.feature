@@ -6,7 +6,7 @@ Feature: Login no site da OrangeHRM
     Scenario: Login com sucesso
         Given acesso a página de login
         When realizo o login com dados válidos
-        Then login é realizado com sucesso
+        Then o login é realizado com sucesso
 
 
     @Negativo
